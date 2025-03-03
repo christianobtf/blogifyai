@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gradient-start: #2563eb;
+    --gradient-end: #7c3aed;
+  }
+
+  body {
+    @apply bg-gray-900 text-gray-100;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+}
+
+@layer components {
+  .neon-button {
+    @apply relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium transition-all bg-transparent rounded-lg;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+
+  .neon-button::before {
+    @apply absolute inset-0 transition-all duration-300 ease-out;
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    content: '';
+    opacity: 0.5;
+  }
+
+  .neon-button:hover::before {
+    opacity: 1;
+  }
+
+  .neon-button span {
+    @apply relative z-10;
+  }
+
+  .gradient-bg {
+    @apply fixed inset-0 -z-10;
+    background: radial-gradient(circle at top left, var(--gradient-start), transparent 50%),
+                radial-gradient(circle at bottom right, var(--gradient-end), transparent 50%),
+                #0f172a;
+    animation: gradientShift 10s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0%, 100% {
+      --gradient-start: #2563eb;
+      --gradient-end: #7c3aed;
+    }
+    50% {
+      --gradient-start: #f472b6;
+      --gradient-end: #fb923c;
+    }
+  }
+}

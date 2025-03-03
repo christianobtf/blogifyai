@@ -1,54 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Transcription Tool</title>
-    <link rel="icon" href="images/favicon.png" type="image/png">
-    <link rel="stylesheet" href="css.css">
-</head>
-<body>
-    <header>
-        <img src="images/logo.png" alt="Logo">
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
-
-    <div class="container">
-        <div class="input-group">
-            <input id="videoUrl" type="text" placeholder="Enter YouTube Video URL">
-            <button class="button" onclick="requestTranscription()">Demarrer</button>
-        </div>
-
-        <div class="video-container" style="display: none;" id="videoSection">
-            <div class="video-title" id="videoTitle">Vidéo: N/A</div>
-            <div class="transcription-section">
-                <div class="video-container" id="videoPlayer">
-                    <iframe id="videoFrame" src="" title="YouTube Video"></iframe>
-                </div>
-                <div class="transcription-container" id="transcriptionOutput">
-                    <div class="section-title">Transcription</div>
-                    <!-- La transcription s'affichera ici -->
-                </div>
-                <button id="copyButton" onclick="copyTranscription()">Copier</button>
-            </div>
-        </div>
-
-        <div class="article-container" id="articleSection" style="display: none;">
-            <div class="section-title">Article Généré</div>
-            <div id="articleOutput">
-                <!-- L'article généré sera affiché ici -->
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>Fait par <a href="https://www.christianobtf.com" target="_blank">Christiano Btf</a> en 2025</p>
-    </footer>
-
-    <script src="java.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
